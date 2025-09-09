@@ -1,0 +1,75 @@
+/* General Styling */
+* {
+  font-family: "Inter", "Noto Sans", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Notification Window */
+.notification {
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Notification Group (to avoid background issues) */
+.notification-group {
+  background: transparent;
+  outline: none;
+}
+
+/* Control Center */
+.control-center {
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Title Widget */
+.widget-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Do Not Disturb Widget */
+.widget-dnd {
+  margin: 10px 0;
+}
+
+/* Clear All Button */
+.widget-title > button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  transition: background 0.2s ease;
+}
+.widget-title > button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Notification Content */
+.notification-content {
+  padding: 5px;
+}
+
+/* Notification Image */
+.notification-content image {
+  margin-right: 10px;
+}
+
+/* Hover Effect for Notifications */
+.notification:hover {
+  background: rgba(50, 50, 50, 0.7);
+}
+
+/* Do Not Disturb Toggle */
+.widget-dnd > flowbox > flowboxchild > button:checked {
+  background: rgba(255, 255, 255, 0.2);
+}

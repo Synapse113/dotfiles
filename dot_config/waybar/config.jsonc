@@ -1,0 +1,114 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+  "modules-left": [
+    "ext/workspaces",
+    "hyprland/mode"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/media-rewind",
+    "custom/media-play",
+    "custom/media-forward",
+    "pulseaudio",
+    "volume",
+    "cpu",
+    "memory",
+    "network",
+    "battery",
+    "tray"
+  ],
+  "ext/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+  "custom/media-rewind": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "playerctl position 15-"
+  },
+  "custom/media-play": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "playerctl play-pause"
+  },
+  "custom/media-forward": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "playerctl position 15+"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+      "headphones": "",
+      // "handsfree": "",
+      // "headset": "",
+      // "phone": "",
+      // "phone-muted": "",
+      // "portable": "",
+      // "car": "",
+      "default": [
+        " ",
+        " "
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+  "hyprland/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "clock": {
+    "format": " {:%I:%M %p - %b %d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 60
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "  {}%",
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": "⚠ Disconnected",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 5
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": true
+  },
+  "tray": {
+    "spacing": 10
+  }
+}
