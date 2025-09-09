@@ -116,3 +116,9 @@ alias lg=lazygit
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 alias ld=lazydocker
 alias yz=yazi
+alias cs=chezmoi
+
+export PATH="$HOME/.cargo/bin:$PATH"
+alias gconf="hx ~/.config/ghostty/config"
+alias ng="ngrok http --url=owenn.ngrok.io 8080"
+alias fix-monitors="hyprctl dispatch moveworkspacetomonitor 1 DP-3 && hyprctl dispatch moveworkspacetomonitor 2 DP-4 && hyprctl dispatch moveworkspacetomonitor 3 DP-4 && hyprctl dispatch moveworkspacetomonitor 4 DP-3"
