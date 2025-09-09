@@ -1,0 +1,8 @@
+inherits = "nord"
+
+"ui.background" = { }
+# "ui.bufferline.background" = { }
+# "ui.gutter" = { }
+# "ui.gutter.selected" = { }
+# "ui.linenr" = "#262a3f"
+# "comment" = { fg = "#6c7086", modifiers = ["italic"] }
