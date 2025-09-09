@@ -1,0 +1,87 @@
+# JavaScript
+[[language]]
+name="javascript"
+language-servers = ["typescript-language-server"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "file.js"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[typescript-language-server]
+command = "typescript-language-server"
+args = [ "--stdio" ]
+
+# Go
+[[language]]
+name="go"
+language-servers = [ "gopls" ]
+auto-format = true
+
+[language-server.gopls]
+command = "gopls"
+
+# PHP
+[language-server.intelephense]
+command = "intelephense"
+args = ["--stdio"]
+
+[language-server.intelephense.config]
+# Ignore CONSTANTS, allow shorttags (<? ?>, <?= ?>)
+intelephense = { diagnostics = { undefinedConstants = false, undefinedMethods = false, undefinedClasses = false }, files = { associations = ["*.php", "*.inc", "*.class", "*.html.php", "*.class.inc"] }, environment = { shortOpenTag = true} }
+
+[[language]]
+name = "php"
+scope = "source.php"
+injection-regex = "<\\?(php)?"
+file-types = ["php", "inc", "php4", "php5", "phtml", "ctp", "html.php"]
+comment-token = "//"
+language-servers = [ "intelephense" ]
+indent = { tab-width = 2, unit = "  " }
+
+# HTML
+[language-server.vscode-html]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "html"
+scope = "text.html.basic"
+injection-regex = "html"
+file-types = ["html", "htm", "xhtml", "html.php"]
+language-servers = ["vscode-html"]
+indent = { tab-width = 2, unit = "  " }
+
+# CSS
+[language-server.vscode-css]
+command = "vscode-css-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "css"
+scope = "source.css"
+file-types = ["css", "scss", "less"]
+language-servers = ["vscode-css"]
+indent = { tab-width = 2, unit = "  " }
+
+# Elixir
+[[language]]
+name = "elixir"
+language-servers = [ "elixir-ls" ]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
+
+[language-server.elixir-ls]
+command = "elixir-ls"
+
+# Rust
+[[language]]
+name = "rust"
+scope = "source.rust"
+injection-regex = "rust"
+file-types = ["rs"]
+roots = ["Cargo.toml", "Cargo.lock"]
+language-servers = [ "rust-analyzer" ]
+formatter = { command = "rustfmt" }
+auto-format = true
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
