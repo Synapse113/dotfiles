@@ -1,107 +1,25 @@
 /* Global styles */
 * {
+    background: transparent;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 13px;
     min-height: 0;
+    font-weight: bold;
     border: none;
-    border-radius: 8px;
-    margin: 0 2px;
-    padding: 0 8px;
+}
+
+tooltip {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Bar styling */
 #waybar {
-    background: transparent;
+    margin-top: 12px;
     color: #ffffff;
     transition: background-color 0.3s;
 }
 
-/* Workspace styling */
-#workspaces {
-    background:rgba(46,52,64,0.3);
-    border-radius: 8px;
-    margin: 2px 4px;
-    padding: 0 2px;
-}
-
-/* --- Media Controls Styling --- */
-#custom-media-rewind,
-#custom-media-play,
-#custom-media-forward {
-    padding: 0 10px;
-    margin: 2px 4px;
-    background:rgba(46,52,64,0.3);
-    border-radius: 8px;
-    transition: 0.5s;
-}
-
-/* Hover effect */
-#custom-media-rewind:hover,
-#custom-media-play:hover,
-#custom-media-forward:hover {
-    background:rgba(46,52,64,0.4);
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background: transparent;
-    color: #ffffff;
-    border-bottom: none;
-    min-width: 20px;
-    transition: 1s;
-}
-
-/* Hover effects */
-#workspaces button:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-#workspaces button.active {
-    color: #ffffff;
-}
-
-#workspaces button.urgent {
-    color: #ffffff;
-}
-
 /* Other module styling */
-#mode, #clock, #cpu, #memory, #network, #battery, #tray, #pulseaudio {
-    padding: 0 10px;
-    margin: 2px 4px;
-    background:rgba(46,52,64,0.3);
-    border-radius: 8px;
-}
-
-/* Specific module styles */
-#clock {
-    font-weight: bold;
-    color: #ffffff;
-}
-
-#cpu {
-    color: #ffffff;
-}
-
-#memory {
-    color: #ffffff;
-}
-
-#network {
-    color: #ffffff;
-}
-
-#network.disconnected {
-    color: #ffffff;
-}
-
-#battery {
-    color: #ffffff;
-}
-
-#battery.warning {
-    color: #ffffff;
-}
-
-#battery.critical {
-    color: #ffffff;
+#mode, #clock, #cpu, #memory, #network, #battery, #tray, #pulseaudio, #custom-vpn {
+    padding: 0 16px;
 }

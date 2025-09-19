@@ -1,39 +1,47 @@
 {
+  "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
-  "height": 30,
-  "spacing": 4,
+  "spacing": 0,
+  "height": 26,
   "modules-left": [
-    "ext/workspaces",
+    "hyprland/workspaces",
     "hyprland/mode"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
-    "custom/media-rewind",
-    "custom/media-play",
-    "custom/media-forward",
-    "pulseaudio",
-    "volume",
-    "cpu",
-    "memory",
+    "tray",
+    "bluetooth",
     "network",
-    "battery",
-    "tray"
+    "pulseaudio",
+    "cpu",
+    "battery"
   ],
-  "ext/workspaces": {
-    "format": "{icon}",
+  "hyprland/workspaces": {
     "on-click": "activate",
+    "format": "{icon}",
     "format-icons": {
-      "active": "",
-      "default": ""
+      "default": "",
+      "active": ""
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
     }
   },
   "custom/media-rewind": {
     "format": "",
     "tooltip": false,
     "on-click": "playerctl position 15-"
+  },
+  "custom/vpn": {
+    "exec": "ip link show tun0 >/dev/null 2>&1 && echo ' VPN' || echo ''",
+    "interval": 5
   },
   "custom/media-play": {
     "format": "",
@@ -46,67 +54,103 @@
     "on-click": "playerctl position 15+"
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
-    "format-muted": "",
+    "format": "{icon}",
+    "on-click": "ghostty --gtk-single-instance=true --class=Wiremix -e wiremix",
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "󰝟",
     "format-icons": {
-      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
-      "headphones": "",
-      // "handsfree": "",
-      // "headset": "",
-      // "phone": "",
-      // "phone-muted": "",
-      // "portable": "",
-      // "car": "",
       "default": [
-        " ",
-        " "
+        "",
+        "",
+        ""
       ]
-    },
-    "scroll-step": 1,
-    "on-click": "pavucontrol"
+    }
   },
   "hyprland/mode": {
     "format": "<span style=\"italic\">{}</span>"
   },
-  "clock": {
-    "format": " {:%I:%M %p - %b %d}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "interval": 60
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "blueberry"
   },
   "cpu": {
-    "format": " {usage}%",
-    "tooltip": false
+    "format": " ",
+    "on-click": "ghostty --gtk-single-instance=true -e btop",
+    "tooltip-format": "{}%"
   },
   "memory": {
-    "format": "  {}%",
-    "tooltip": false
+    "format": " ",
+    "on-click": "ghostty --gtk-single-instance=true -e btop",
+    "tooltip-format": "{}%"
+  },
+  "clock": {
+    "format": "{:L%A %I:%M}",
+    "format-alt": "{:L%d %B W%V %Y}",
+    "tooltip": true
   },
   "network": {
-    "format-wifi": "  {essid} ({signalStrength}%)",
-    "format-ethernet": " {ifname}",
-    "format-disconnected": "⚠ Disconnected",
-    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-    "interval": 5
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "ghostty --gtk-single-instance=true -e nmtui"
   },
   "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{icon}",
+    "format-charging": "{icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "tooltip": true
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
   },
   "tray": {
     "spacing": 10
