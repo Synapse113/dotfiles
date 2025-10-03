@@ -1,14 +1,20 @@
 theme = "alpha"
 
 [editor]
+mouse = true
 line-number = "relative"
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
 other-lines = "disable"
 
+[editor.indent-guides]
+character = "┊"
+render = true
+
 [keys.normal]
 D = ["ensure_selections_forward", "extend_to_line_end", "delete_selection"]
+
 # yazi
 Y = [
   ':sh rm -f /tmp/unique-file',

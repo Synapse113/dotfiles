@@ -3,7 +3,7 @@
 name="javascript"
 language-servers = ["typescript-language-server"]
 formatter = { command = "prettier", args = ["--stdin-filepath", "file.js"] }
-auto-format = true
+# auto-format = true
 indent = { tab-width = 2, unit = "  " }
 
 [typescript-language-server]
@@ -25,8 +25,8 @@ command = "intelephense"
 args = ["--stdio"]
 
 [language-server.intelephense.config]
-# Ignore CONSTANTS, allow shorttags (<? ?>, <?= ?>)
-intelephense = { diagnostics = { undefinedConstants = false, undefinedMethods = false, undefinedClasses = false }, files = { associations = ["*.php", "*.inc", "*.class", "*.html.php", "*.class.inc"] }, environment = { shortOpenTag = true} }
+# Ignore CONSTANTS, allow shorttags for templating (<? ?>, <?= ?>)
+intelephense = { diagnostics = { undefinedConstants = false, undefinedMethods = false, undefinedClasses = false }, files = { associations = ["*.php", "*.inc", "*.class", "*.html.php", "*.class.inc"] }, environment = { shortOpenTag = true } }
 
 [[language]]
 name = "php"
