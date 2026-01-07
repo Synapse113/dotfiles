@@ -1,0 +1,20 @@
+[general]
+import = ["rose-pine-moon.toml"]
+
+[window]
+padding = { x = 24, y = 24 }
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font"}
+bold = { family = "JetBrainsMono Nerd Font" }
+size = 12.0
+
+[cursor]
+style = { shape = "Block" }
+
+[colors.primary]
+background = "#191724"
+
+[mouse]
+hide_when_typing = true
+

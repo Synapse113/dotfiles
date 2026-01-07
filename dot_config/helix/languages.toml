@@ -2,9 +2,10 @@
 [[language]]
 name="javascript"
 language-servers = ["typescript-language-server"]
+injection-regex = "<script"
 formatter = { command = "prettier", args = ["--stdin-filepath", "file.js"] }
 # auto-format = true
-indent = { tab-width = 2, unit = "  " }
+indent = { tab-width = 2, unit = "\t" }
 
 [typescript-language-server]
 command = "typescript-language-server"
@@ -15,19 +16,12 @@ args = [ "--stdio" ]
 name="go"
 language-servers = [ "gopls" ]
 auto-format = true
+indent = { tab-width = 2, unit = "\t" }
 
 [language-server.gopls]
 command = "gopls"
 
 # PHP
-[language-server.intelephense]
-command = "intelephense"
-args = ["--stdio"]
-
-[language-server.intelephense.config]
-# Ignore CONSTANTS, allow shorttags for templating (<? ?>, <?= ?>)
-intelephense = { diagnostics = { undefinedConstants = false, undefinedMethods = false, undefinedClasses = false }, files = { associations = ["*.php", "*.inc", "*.class", "*.html.php", "*.class.inc"] }, environment = { shortOpenTag = true } }
-
 [[language]]
 name = "php"
 scope = "source.php"
@@ -35,7 +29,16 @@ injection-regex = "<\\?(php)?"
 file-types = ["php", "inc", "php4", "php5", "phtml", "ctp", "html.php"]
 comment-token = "//"
 language-servers = [ "intelephense" ]
-indent = { tab-width = 2, unit = "  " }
+indent = { tab-width = 2, unit = "\t" }
+
+[language-server.intelephense]
+command = "intelephense"
+args = ["--stdio"]
+indent = { tab-width = 2, unit = "\t" }
+
+[language-server.intelephense.config]
+# Ignore CONSTANTS, allow shorttags for templating (<? ?>, <?= ?>)
+intelephense = { diagnostics = { undefinedConstants = false, undefinedMethods = false, undefinedClasses = false }, files = { associations = ["*.php", "*.inc", "*.class", "*.html.php", "*.class.inc"] }, environment = { shortOpenTag = true } }
 
 # HTML
 [language-server.vscode-html]
@@ -48,7 +51,7 @@ scope = "text.html.basic"
 injection-regex = "html"
 file-types = ["html", "htm", "xhtml", "html.php"]
 language-servers = ["vscode-html"]
-indent = { tab-width = 2, unit = "  " }
+indent = { tab-width = 2, unit = "\t" }
 
 # CSS
 [language-server.vscode-css]
@@ -60,17 +63,27 @@ name = "css"
 scope = "source.css"
 file-types = ["css", "scss", "less"]
 language-servers = ["vscode-css"]
-indent = { tab-width = 2, unit = "  " }
+indent = { tab-width = 2, unit = "\t" }
 
 # Elixir
 [[language]]
 name = "elixir"
 language-servers = [ "elixir-ls" ]
-indent = { tab-width = 2, unit = "  " }
+indent = { tab-width = 2, unit = "\t" }
 auto-format = true
 
 [language-server.elixir-ls]
 command = "elixir-ls"
+
+# Ruby
+[[language]]
+name = "ruby"
+language-servers = [ "ruby-lsp" ]
+indent = { tab-width = 2, unit = "\t" }
+auto-format = true
+
+[language-server.ruby-lsp]
+command = "ruby-lsp"
 
 # Rust
 [[language]]
@@ -81,6 +94,7 @@ file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
 language-servers = [ "rust-analyzer" ]
 formatter = { command = "rustfmt" }
+indent = { tab-width = 2, unit = "\t" }
 auto-format = true
 
 [language-server.rust-analyzer]

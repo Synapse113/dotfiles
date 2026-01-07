@@ -55,7 +55,7 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "ghostty --gtk-single-instance=true --class=Wiremix -e wiremix",
+    "on-click": "alacritty --class=Wiremix -e wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
@@ -76,22 +76,21 @@
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "blueberry"
+    "on-click": "alacritty -e bluetui"
   },
   "cpu": {
-    "format": " ",
-    "on-click": "ghostty --gtk-single-instance=true -e btop",
+    "format": "",
+    "on-click": "alacritty -e btop",
     "tooltip-format": "{}%"
   },
   "memory": {
-    "format": " ",
-    "on-click": "ghostty --gtk-single-instance=true -e btop",
+    "format": "",
+    "on-click": "alacritty -e btop",
     "tooltip-format": "{}%"
   },
   "clock": {
     "format": "{:L%A %I:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
-    "tooltip": true
   },
   "network": {
     "format-icons": [
@@ -110,7 +109,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "ghostty --gtk-single-instance=true -e nmtui"
+    "on-click": "alacritty -e impala"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -153,6 +152,7 @@
     }
   },
   "tray": {
-    "spacing": 10
+    "spacing": 16,
+    "icon-size": 16
   }
 }

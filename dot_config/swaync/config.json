@@ -13,7 +13,11 @@
   "timeout": 5,
   "timeout-low": 3,
   "timeout-critical": 0,
-  "widgets": ["title", "dnd", "notifications"],
+  "widgets": [
+    "title",
+    "dnd",
+    "notifications"
+  ],
   "widget-config": {
     "title": {
       "text": "Notifications",

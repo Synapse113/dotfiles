@@ -3,16 +3,26 @@
   font-family: "Inter", "Noto Sans", sans-serif;
   font-size: 14px;
   color: #ffffff;
+  background: transparent;
 }
 
 /* Notification Window */
 .notification {
-  background: rgba(30, 30, 30, 0.5);
-  border-radius: 12px;
+  background: #1f1d2ef0;
   padding: 10px;
   margin: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, #33ccff, #00ff99);
+  border-image-slice: 1;
+  border-radius: 4px;
+}
+
+/* Hover Effect for Notifications */
+.notification:hover {
+  background: #1f1d2eff;
 }
 
 /* Notification Group (to avoid background issues) */
@@ -62,11 +72,6 @@
 /* Notification Image */
 .notification-content image {
   margin-right: 10px;
-}
-
-/* Hover Effect for Notifications */
-.notification:hover {
-  background: rgba(50, 50, 50, 0.7);
 }
 
 /* Do Not Disturb Toggle */

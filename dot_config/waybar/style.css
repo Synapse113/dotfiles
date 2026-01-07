@@ -1,4 +1,3 @@
-/* Global styles */
 * {
     background: transparent;
     font-family: JetBrainsMono Nerd Font, monospace;
@@ -13,13 +12,18 @@ tooltip {
   background: #21202e
 }
 
-/* Bar styling */
+.modules-left {
+  margin-left: 12px;
+}
+
+.modules-right {
+  margin-right: 12px;
+}
+
 #waybar {
-    margin-top: 12px;
     transition: background-color 0.3s;
 }
 
-/* Other module styling */
-#mode, #clock, #cpu, #memory, #network, #battery, #tray, #pulseaudio, #custom-vpn, #bluetooth {
-    padding: 0 16px;
+#mode, #cpu, #memory, #network, #battery, #tray, #pulseaudio, #custom-vpn, #bluetooth {
+    padding: 0px 12px;
 }

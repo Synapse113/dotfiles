@@ -3,6 +3,7 @@ theme = "alpha"
 [editor]
 mouse = true
 line-number = "relative"
+bufferline = "multiple"
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
@@ -12,6 +13,7 @@ other-lines = "disable"
 character = "┊"
 render = true
 
+# delete from cursor position to end of line
 [keys.normal]
 D = ["ensure_selections_forward", "extend_to_line_end", "delete_selection"]
 
@@ -23,6 +25,7 @@ Y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
+
 # lazygit
 G = [
   ":write-all",

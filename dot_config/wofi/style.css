@@ -1,28 +1,25 @@
 * {
     font-family: JetBrains Mono, sans-serif;
     font-size: 14px;
-    color: #e0e0e0; /* Light gray for text */
+    color: #e0def4;
 }
 
 #window {
-    background: rgba(23,24,32, 0.9); /* Dark gray, semi-transparent */
+    background: rgba(25, 23, 36, 0.99);
     border-radius: 12px;
     margin: 10px;
 }
 
 #input {
-    /* background: rgba(255, 255, 255, 0.1); /* Medium gray for input */ */
-    background: rgba(77, 84, 99, 1);
+    background: rgba(255, 255, 255, 0.02);
     border-radius: 8px;
     padding: 8px;
     margin: 10px;
     border: none;
-    color: #ffffff; /* Light gray text */
 }
 
 #input:focus {
-    outline: none;
-    border: none;
+    box-shadow: none;
 }
 
 #outer-box {
@@ -39,7 +36,7 @@
 }
 
 #entry:selected {
-    background: rgba(255, 255, 255, 0.2); /* Light gray highlight */
+    background: rgba(255, 255, 255, 0.02);
     outline: none;
 }
 
